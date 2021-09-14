@@ -1,4 +1,4 @@
-import 'package:demo_05/models/product.dart';
+import 'package:demo_05/providers/product.dart';
 import 'package:flutter/material.dart';
 
 class Products with ChangeNotifier {
