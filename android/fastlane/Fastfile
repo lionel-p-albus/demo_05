@@ -13,6 +13,8 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+last_5_commits = changelog_from_git_commits(pretty:" - %s [%aN]", commits_count:5)
+
 default_platform(:android)
 
 platform :android do
@@ -23,30 +25,15 @@ platform :android do
 
   desc "Submit a new Beta Build to Firebase App Distribution"
   lane :beta do
-    gradle(task: "clean assembleRelease")
-#     build
+    build
 
     firebase_app_distribution(
         app: "1:263329569205:android:3b6726d7d43a50ccabe1fc",
-        groups: "flutter-demo",
-        release_notes: "Lots of amazing new features to test out!"
+        groups: "internal",
+        android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+        release_notes: last_5_commits
     )
   end
-
-#   desc "Build debug and test APK for screenshots"
-#   lane :build_for_screengrab do
-#     gradle(
-#       task: 'clean'
-#     )
-#     gradle(
-#       task: 'assemble',
-#       build_type: 'Debug'
-#     )
-#     gradle(y
-#       task: 'assemble',
-#       build_type: 'AndroidTest'
-#     )
-#   end
 
   desc "Build"
   lane :build do

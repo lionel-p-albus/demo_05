@@ -189,6 +189,7 @@ GEM
     uber (0.1.0)
     unf (0.1.4)
       unf_ext
+    unf_ext (0.0.8)
     unf_ext (0.0.8-x64-mingw32)
     unicode-display_width (1.8.0)
     webrick (1.7.0)
@@ -206,6 +207,7 @@ GEM
       xcpretty (~> 0.2, >= 0.0.7)
 
 PLATFORMS
+  arm64-darwin-20
   x64-mingw32
 
 DEPENDENCIES
@@ -213,4 +215,4 @@ DEPENDENCIES
   fastlane-plugin-firebase_app_distribution
 
 BUNDLED WITH
-   2.2.32
+   2.3.0
