@@ -28,7 +28,7 @@ platform :android do
     build
 
     firebase_app_distribution(
-        app: "1:263329569205:android:3b6726d7d43a50ccabe1fc",
+        app: "1:263329569205:android:ff79279a2ce9141aabe1fc",
         groups: "internal",
         android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
         release_notes: last_5_commits
@@ -38,10 +38,28 @@ platform :android do
   desc "Build"
   lane :build do
     gradle(task: "clean assembleRelease")
+
+    gradle(
+       task: "bundle",
+       build_type: "Release",
+    )
   end
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
-    upload_to_play_store
+    versions = google_play_track_version_codes(track: "production")
+    version_code = versions[0] + 1
+
+    upload_to_play_store(
+       track: 'production',
+#        track_promote_to: 'production',
+#        skip_upload_apk: true,
+       skip_upload_metadata: false,
+       skip_upload_images: true,
+       skip_upload_screenshots: true,
+#        skip_upload_aab: true,
+       aab: "../build/app/outputs/bundle/release/app-release.aab",
+       version_code: version_code
+    )
   end
 end

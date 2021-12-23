@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:263329569205:android:ff79279a2ce9141aabe1fc",
+        "android_client_info": {
+          "package_name": "th.co.singh.demo01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263329569205-2r143j66qiscnlj9kbmicic6jbnho2k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEKcZt6-fAM4rut6Uxy_i6bFNkqj19n8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263329569205-2r143j66qiscnlj9kbmicic6jbnho2k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:263329569205:android:3b6726d7d43a50ccabe1fc",
         "android_client_info": {
           "package_name": "th.co.singh.demo05"
