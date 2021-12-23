@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             accentColor: Colors.deepOrange,
             fontFamily: 'Lato',
             textTheme: ThemeData.light().textTheme.copyWith(
-                  title: TextStyle(
+                  subtitle1: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
